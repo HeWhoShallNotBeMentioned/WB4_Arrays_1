@@ -46,11 +46,18 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
       return -1;
     }
   });
+
+  //Done as terniary sorting names
+  //const sorted = inventors.sort((a, b) => a.last > b.last ? 1 : -1);
   console.table(sorted);
 
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
+  const totalYears = inventors.reduce((total, inventor) => {
+    return total + (inventor.passed - inventor.year);
+  }, 0);// , 0 sets the initial total to 0 and allows us to readily access total number at finish
+  console.log("cumulative years lived: ", totalYears);
 
 // 5. Sort the inventors by years lived
 
