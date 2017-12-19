@@ -77,17 +77,25 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 //Need to do this test from the actual page
 
-  const category = document.querySelector(".mw-category");
-
-  let links = Array.from(category.querySelectorAll('a'));
-  const de = links
-              .map(link => link.textContent)
-              .filter(streetName =>
-                streetName.includes('de'));
-  console.table(de);
+  // const category = document.querySelector(".mw-category");
+  //
+  // let links = Array.from(category.querySelectorAll('a'));
+  // const de = links
+  //             .map(link => link.textContent)
+  //             .filter(streetName =>
+  //               streetName.includes('de'));
+  // console.table(de);
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+
+  const alpha = people.sort(function(lastOne, nextOne) {
+    const [aLast, aFirst] = lastOne.split(', ');
+    const [bLast, bFirst] = nextOne.split(', ');
+    return aLast > bLast ? 1 : -1;
+  });
+
+  console.table(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
