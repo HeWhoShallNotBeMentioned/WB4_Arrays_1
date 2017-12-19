@@ -99,8 +99,14 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
-const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-const transportation = data.reduce(function(obj, item) {
+const data = ['walk',
+'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+
+
+const d2 = data.sort();
+console.table(d2);
+const transportation = d2.reduce(function(obj, item) {
   if (!obj[item]) {
     obj[item] = 0;
   }
@@ -109,3 +115,4 @@ const transportation = data.reduce(function(obj, item) {
 }, {});
 
 console.table(transportation);
+//console.table(t2);
